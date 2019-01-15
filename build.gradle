@@ -1,26 +1,8 @@
-buildscript {
-    repositories {
-        google()
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
-    }
-}
-
+apply plugin: 'java'
 apply plugin: 'application'
-
-libsDirName = 'lib' // simple workaround for error in startScripts task
-mainClassName = 'hw.Main' // TODO change this setting to match your main class
-
-jar {
-    manifest {
-        attributes 'Main-Class': mainClassName
-    }
-}    
+mainClassName = "hw.Main"
 
 repositories {
-    google()
     jcenter()
 }
 
@@ -28,15 +10,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-tasks.withType(JavaCompile) { 
-    options.compilerArgs << "-Xlint:all" 
-}
-
-tasks.withType(JavaExec) {
-    jvmArgs << "-enableassertions"
-}
-
-run {
-    standardInput = System.in
-    standardOutput = System.out
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:unchecked"
 }
