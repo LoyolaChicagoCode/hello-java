@@ -34,6 +34,13 @@ On Linux or Mac OS X:
 On Windows:
 	
     > gradlew test
+    
+There will be a line that says > There were failing tests. See the report at: file:///... 
+Copy & paste that line in a browser address bar, starting with file: to the end, to see the failures
+
+Alternatively, in the Project view, right-click TestHelloWorld and select Run 'TestHelloWorld' or 
+right-click app and select Run 'All Tests' 
+This shows the specific JUnit assertion errors without the need for copy and paste
 
 # Running the Application Outside Gradle
 
