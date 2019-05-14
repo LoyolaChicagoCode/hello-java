@@ -35,6 +35,6 @@ public class TestHelloWorld {
   @Test
   public void getYear() { // this test is OK, fix HelloWorld.java to make it pass!
     assertNotNull(fixture);
-    assertEquals(2018, fixture.getYear());
+    assertEquals(2019, fixture.getYear());
   }
 }
