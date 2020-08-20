@@ -21,13 +21,12 @@ public class TestHelloWorld {
   }
 
   @Test
-  public void getMessage() {
+  public void initialization() {
     assertNotNull(fixture);
-    assertEquals("hello world", fixture.getMessage());
   }
 
   @Test
-  public void getMessage2() { // this test is broken - fix it!
+  public void getMessage() { // this test is broken - fix it!
     assertNull(fixture);
     assertEquals("hello world", fixture.getMessage());
   }
