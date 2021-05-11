@@ -1,6 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "hw.Main"
+mainClassName = "hw.MainClass"
 
 repositories {
     google()
