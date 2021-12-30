@@ -1,16 +1,27 @@
+plugins {
+    id 'com.github.sherter.google-java-format' version '0.9'
+}
+
 apply plugin: 'java'
 apply plugin: 'application'
+
 mainClassName = "hw.Main"
+libsDirName = 'lib' // simple workaround for error in startScripts task
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
 
 repositories {
-    google()
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.+'
+    testImplementation group: 'junit', name: 'junit', version: '4.+'
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:unchecked"
+    options.compilerArgs << "-Xlint:all"
 }
