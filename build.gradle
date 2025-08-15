@@ -22,6 +22,6 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.+'
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.compilerArgs << "-Xlint:all"
 }
