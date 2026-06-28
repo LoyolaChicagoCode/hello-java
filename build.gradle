@@ -5,11 +5,13 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "hw.Main"
+application {
+    mainClass = 'hw.Main'
+}
 
 jar {
     manifest {
-        attributes 'Main-Class': mainClassName
+        attributes 'Main-Class': application.mainClass.get()
     }
 }
 
